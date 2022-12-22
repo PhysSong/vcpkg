@@ -1,0 +1,13 @@
+diff --git a/src/Serialization.h b/src/Serialization.h
+index cccfc54..b18c3f7 100644
+--- a/src/Serialization.h
++++ b/src/Serialization.h
+@@ -40,6 +40,8 @@
+ #include <assert.h>
+ #include <functional>
+ 
++using ssize_t = std::make_signed_t<std::size_t>;
++
+ #ifndef __has_extension
+ # define __has_extension(x) 0
+ #endif
