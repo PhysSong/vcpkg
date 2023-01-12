@@ -5,6 +5,10 @@
   "homepage": "https://www.linuxsampler.org/libgig/",
   "dependencies": [
     {
+      "name": "libuuid",
+      "platform": "!osx & !windows"
+    },
+    {
       "name": "vcpkg-cmake",
       "host": true
     },

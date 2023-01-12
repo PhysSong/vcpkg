@@ -8,8 +8,9 @@ vcpkg_extract_source_archive(
     SOURCE_PATH
     ARCHIVE "${ARCHIVE}"
     PATCHES
-        msvc-fix-ssize_t.patch
-        always-allow-cmake.patch
+        0001-msvc-fix-ssize_t.patch
+        0002-always-allow-cmake.patch
+        0003-fix-linux-build.patch
 )
 
 string(COMPARE EQUAL ${VCPKG_LIBRARY_LINKAGE} dynamic LIBGIG_BUILD_SHARED)
