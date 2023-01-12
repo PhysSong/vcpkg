@@ -13,9 +13,6 @@
       "host": true
     }
   ],
-  "default-features": [
-	"dynamic-libs"
-  ],
   "features": {
 	"extra-tools": {
 	  "description": "Build extra tools",
@@ -24,10 +21,10 @@
 	  ]
 	},
 	"tests": {
-	  "description": "Build test cases"
-	},
-	"dynamic-libs": {
-	  "description": "Build dynamic libraries"
+	  "description": "Build test cases",
+	  "dependencies": [
+	    "cppunit"
+	  ]
 	}
   }
 }
