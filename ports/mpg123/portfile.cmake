@@ -9,6 +9,7 @@ vcpkg_from_sourceforge(
     PATCHES
         fix-modulejack.patch
         fix-m1-build.patch
+        fix-check_type_size-not-found.patch
 )
 
 if(VCPKG_TARGET_IS_WINDOWS AND NOT VCPKG_TARGET_IS_MINGW)
