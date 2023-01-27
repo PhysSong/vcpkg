@@ -10,7 +10,7 @@ vcpkg_from_github(
         fix-compile-options.patch
 )
 
-if(VCPKG_TARGET_IS_MINGW)
+if(VCPKG_TARGET_IS_MINGW OR VCPKG_TARGET_IS_EMSCRIPTEN)
     set(WITH_STACK_PROTECTOR OFF)
     string(APPEND VCPKG_C_FLAGS " -D_FORTIFY_SOURCE=0")
     string(APPEND VCPKG_CXX_FLAGS " -D_FORTIFY_SOURCE=0")
