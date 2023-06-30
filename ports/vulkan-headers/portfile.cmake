@@ -1,20 +1,14 @@
-# header-only library
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO KhronosGroup/Vulkan-Headers
-    REF 00671c64ba5c488ade22ad572a0ef81d5e64c803
-    SHA512 e740688d0d2abd5c82b5bda1606e24edd87674ec7bd72ed4220c4d2d5bab30b8c993251c0b96a4c59d9e3190ddda7cb0cbf1e160aa404ef6e3c4aff23864d535
-    HEAD_REF v1.3.238
+    REF bae9700cd9425541a0f6029957f005e5ad3ef660
+    SHA512 b1a51cb868563bf044c65cab8411547b8a08ea21998f01e5be53027217ddd18ff6907d78490c08e3f14865c53436ddf092811726ae3df23a29f8edd614bdb95b
+    HEAD_REF v1.3.250
 )
 
-vcpkg_cmake_configure(
-    SOURCE_PATH "${SOURCE_PATH}"
-)
+set(VCPKG_BUILD_TYPE release) # header-only port
+
+vcpkg_cmake_configure(SOURCE_PATH "${SOURCE_PATH}")
 vcpkg_cmake_install()
-
-# Cleanup
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug")
-file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/share")
-
-# Handle copyright
-file(INSTALL "${SOURCE_PATH}/LICENSE.txt" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}" RENAME copyright)
+vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE.txt")
+file(INSTALL "${CMAKE_CURRENT_LIST_DIR}/usage" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}")
